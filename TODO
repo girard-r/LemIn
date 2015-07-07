@@ -1,0 +1,40 @@
+
+int	**my_realloc_ways(t_graph *node, int **ways)
+=> rajoute le numero (node->room_>num) à la dernière case de la dernière ligne de ways
+
+int	**get_out(int **ways)
+=> Ecrit le CHIFFRE_SORTIE (-2) à la dernière case de la dernière ligne de ways
+=> Rajoute une ligne à ways et lui donne -1 comme valeur;
+
+
+//!!ATTENTION!!\\
+Pour les deux fonction, la valeur qui dit qu'on est dans une nouvelle ligne est -1
+Exemple :
+
+à l'initialisation on malloc de 2* sizeof int*, puis la première case de sizeof int:
+
+[-1]
+[NULL]
+
+on commencera à ecrire à la place de -1; au premier tour, si on passe dans le noeud numero 5:
+
+[5][-1]
+[NULL]
+
+Si on trouve la sortie apres etre passé par 5,6,8,7,1,2,9:
+
+[5][6][8][7][1][2][9][-2][-1] // -2 => on a trouvé une sortie
+[-1] // -1 on a ajouté une ligne
+[NULL] // fin de tableau
+
+
+
+=================== DIVAGATIONS ================
+- La fonction de traitement va trier par ordre de grandeur les chemins (ways)
+
+Tenter un algo de tri opti, déja le parcour du graph va prendre plus ou moins de temps (tout est relatif) alors un bon algo de tri, ca serait opé!
+
+- Ensuite la facon la plus simple est de faire comme ca https://www.youtube.com/watch?v=lU_y6nEgF8M#t=246
+(le petit en blanc pense bien, c'est plus ou moins ce que j'avais pensé à la base)
+
+et là on a fini :)
